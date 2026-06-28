@@ -1,6 +1,6 @@
-##CHANGELOG RELEASES
+#CHANGELOG RELEASES
 ---
-##v1.0.0
+#v1.0.0
 *Initial Release
 *Deploy
 *Initial Version
