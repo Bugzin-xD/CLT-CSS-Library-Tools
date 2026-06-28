@@ -231,6 +231,62 @@ Example:
 
 ---
 
+---
+
+# Boilerplate
+
+Here is a ready-to-use HTML template containing the basic structure to start developing with CLT instantly:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CLT Project Template</title>
+    
+    <!-- CLT CSS Stylesheets -->
+    <link rel="stylesheet" href="clt-dark-minimalist.css">
+    <link rel="stylesheet" href="clt.min.css">
+</head>
+<body class="clt-animation-scroll">
+
+    <!-- Navbar -->
+    <nav class="clt-navbar">
+        <h1 class="clt-title">My App</h1>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="clt-container clt-flex-center">
+        <main class="clt-main">
+            <div class="clt-card">
+                <h2 class="clt-card-title">Welcome to CLT</h2>
+                <p class="clt-card-text">Start building your clean interface here.</p>
+                
+                <!-- Smart Form Example -->
+                <input clt="Email Address">
+                <input type="password" clt="Password" reveal>
+                
+                <button class="clt-card-button">Get Started</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Footer -->
+    <footer class="clt-footer">
+        <p class="clt-footer-text">© 2026 My Project</p>
+        <p class="clt-footer-right">Powered by CLT</p>
+    </footer>
+
+    <!-- CLT JavaScript Functions -->
+    <script src="clt-functions.js"></script>
+</body>
+</html>
+```
+
+---
+
+
 # Philosophy
 
 CLT follows four core principles:
