@@ -1,0 +1,159 @@
+const year = new Date().getFullYear();
+
+document.querySelectorAll(".clt-footer-right").forEach(el => {
+    el.textContent = `© ${el.textContent} - ${year}`;
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[clt]").forEach((element, index) => {
+        const value = element.getAttribute("clt");
+
+        if (element.tagName === "INPUT") {
+            const wrapper = document.createElement("div");
+            wrapper.className = "clt-input-group";
+
+            const inputWrapper = document.createElement("div");
+            inputWrapper.className = "clt-input-wrapper";
+
+            const id = element.id || `clt-input-${index}`;
+            element.id = id;
+
+            element.classList.add("clt-input");
+
+            if (!element.hasAttribute("placeholder")) {
+                element.placeholder = " ";
+            }
+
+            const label = document.createElement("label");
+            label.className = "clt-label";
+            label.htmlFor = id;
+            label.textContent = value;
+
+            element.removeAttribute("clt");
+
+            element.parentNode.insertBefore(wrapper, element);
+
+            wrapper.appendChild(inputWrapper);
+            inputWrapper.appendChild(element);
+            inputWrapper.appendChild(label);
+
+            if (element.hasAttribute("reveal") && element.type === "password") {
+                const revealLabel = document.createElement("label");
+                revealLabel.className = "clt-reveal";
+
+                const revealCheckbox = document.createElement("input");
+                revealCheckbox.type = "checkbox";
+
+                const revealText = document.createElement("span");
+                revealText.textContent = "Mostrar";
+
+                revealCheckbox.addEventListener("change", () => {
+                    element.type = revealCheckbox.checked ? "text" : "password";
+                });
+
+                element.removeAttribute("reveal");
+
+                revealLabel.appendChild(revealCheckbox);
+                revealLabel.appendChild(revealText);
+                wrapper.appendChild(revealLabel);
+            }
+        }
+
+        if (element.tagName === "BUTTON") {
+            const state = value.toLowerCase();
+
+            if (state === "on") {
+                element.classList.add("clt-active-button");
+                element.disabled = false;
+            }
+
+            if (state === "off") {
+                element.classList.add("clt-deactive-button");
+                element.disabled = true;
+            }
+
+            if (state === "loading") {
+                element.classList.add("clt-loading");
+                element.disabled = true;
+
+                if (!element.querySelector(".clt-spinner")) {
+                    const spinner = document.createElement("span");
+                    spinner.className = "clt-spinner";
+                    spinner.textContent = "↻";
+                    element.prepend(spinner);
+                }
+            }
+
+            element.removeAttribute("clt");
+        }
+    });
+
+    document.querySelectorAll("clt-alert").forEach(alert => {
+        const div = document.createElement("div");
+
+        div.className = "clt-alert";
+
+        const type = (alert.getAttribute("type") || "").toLowerCase();
+
+        let icon = "ℹ";
+
+        if (type === "warn") {
+            div.classList.add("clt-alert-warn");
+            icon = "⚠";
+        }
+
+        if (type === "alert") {
+            div.classList.add("clt-alert-alert");
+            icon = "✖";
+        }
+
+        const iconSpan = document.createElement("span");
+        iconSpan.className = "clt-alert-icon";
+        iconSpan.textContent = icon;
+
+        const textSpan = document.createElement("span");
+        textSpan.className = "clt-alert-text";
+        textSpan.innerHTML = alert.innerHTML;
+
+        div.appendChild(iconSpan);
+        div.appendChild(textSpan);
+
+        alert.replaceWith(div);
+    });
+
+    document.querySelectorAll("[clt-copy]").forEach(button => {
+        button.addEventListener("click", async () => {
+            const target = document.getElementById(button.getAttribute("clt-copy"));
+
+            if (!target) {
+                return;
+            }
+
+            const original = button.textContent;
+
+            await navigator.clipboard.writeText(target.textContent);
+
+            button.textContent = "Copied!";
+            button.classList.add("clt-active-button");
+
+            setTimeout(() => {
+                button.textContent = original;
+                button.classList.remove("clt-active-button");
+            }, 1200);
+        });
+    });
+
+    document.querySelectorAll("[clt-download]").forEach(button => {
+        button.addEventListener("click", () => {
+            const file = button.getAttribute("clt-download");
+            const name = button.getAttribute("download-name") || file.split("/").pop();
+
+            const link = document.createElement("a");
+            link.href = file;
+            link.download = name;
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+        });
+    });
+});

@@ -1,0 +1,96 @@
+/*!
+ * CLT (CSS Library Tools)
+ * Version: 1.0
+ * Theme: Dark Minimalist
+ * Author: Loaden TI
+ * Copyright ©Loaden TI
+ */
+
+:root {
+    --clt-bg-start: #1a1a1a;
+    --clt-bg-end: #333;
+
+    --clt-surface: #3a3a3a;
+    --clt-surface-soft: #333;
+    --clt-surface-glass: #44444498;
+    --clt-header-glass: #55555598;
+
+    --clt-text: #eee;
+    --clt-text-soft: #ddd;
+    --clt-text-muted: #aaa;
+    --clt-text-focus: #fff;
+
+    --clt-border-color: #666;
+    --clt-border-focus: #999;
+    --clt-border-soft: #ddd;
+    --clt-border: 1px solid var(--clt-border-color);
+    --clt-border-button: 1.5px solid var(--clt-border-color);
+
+    --clt-success: rgb(0, 117, 0);
+    --clt-danger: rgb(117, 0, 0);
+    --clt-warning: #d6a700;
+    --clt-warning-bg: #4d4108;
+    --clt-danger-bg: #471111;
+
+    --clt-selection: #585858;
+
+    --clt-scroll-track: #222;
+    --clt-scroll-thumb: #555;
+    --clt-scroll-thumb-hover: #666;
+    --clt-scroll-size: 10px;
+    --clt-scroll-border: 2px solid var(--clt-scroll-track);
+
+    --clt-radius-sm: 2px;
+    --clt-radius-md: 4px;
+    --clt-radius: 10px;
+    --clt-radius-lg: 14px;
+    --clt-radius-pill: 999px;
+
+    --clt-shadow: 0 4px 14px #00000040;
+
+    --clt-font: 'Trebuchet MS', 'Montserrat', 'Roboto', sans-serif;
+    --clt-title-size: 2.5rem;
+    --clt-text-size: 1rem;
+    --clt-p-size: 1.1rem;
+    --clt-button-size: 1.5rem;
+    --clt-label-size: .8rem;
+    --clt-small-size: .9rem;
+
+    --clt-transition-fast: .15s;
+    --clt-transition: .25s;
+    --clt-transition-slow: .3s;
+    --clt-ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    --clt-card-width: min(90%, 420px);
+    --clt-input-width: min(90%, 350px);
+    --clt-container-width: min(90%, 1100px);
+
+    --clt-card-padding: 25px 18px;
+    --clt-button-padding: 4px 10px;
+    --clt-input-padding: 16px 12px;
+    --clt-alert-padding: 12px 16px;
+    --clt-footer-padding: 10px;
+    --clt-header-padding: 10px 0;
+    --clt-navbar-padding: 12px 20px;
+
+    --clt-gap-sm: 8px;
+    --clt-gap: 10px;
+    --clt-gap-lg: 15px;
+
+    --clt-margin-sm: 10px;
+    --clt-margin: 20px;
+    --clt-margin-lg: 40px;
+
+    --clt-loader-size: 32px;
+    --clt-loader-border: 3px solid var(--clt-border-color);
+    --clt-loader-border-top: #aaa;
+
+    --clt-blur: blur(10px);
+
+    --clt-hover-y: -3px;
+    --clt-active-scale: .95;
+
+    --clt-disabled-opacity: .65;
+    --clt-loading-opacity: .8;
+    --clt-date-icon-opacity: .7;
+}
