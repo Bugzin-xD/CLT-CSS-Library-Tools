@@ -33,4 +33,4 @@ All significant changes to this project will be documented in this file.
 
 **Date:** 2026-07-06
 
-### In developing
+### v2 Announced
