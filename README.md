@@ -38,10 +38,10 @@ The library combines modern CSS, lightweight JavaScript, and native browser feat
 Include the required files inside your project.
 
 ```html
-<link rel="stylesheet" href="clt-dark-minimalist.css">
+<link rel="stylesheet" href="clt.dm.css">
 <link rel="stylesheet" href="clt.min.css">
 
-<script src="clt-functions.js"></script>
+<script src="clt.min.js"></script>
 ```
 
 ---
@@ -51,10 +51,10 @@ Include the required files inside your project.
 You can also use CLT directly from the hosted version without downloading any files.
 
 ```html
-<link rel="stylesheet" href="https://clt-iota.vercel.app/clt-dark-minimalist.css">
+<link rel="stylesheet" href="https://clt-iota.vercel.app/clt.dm.css">
 <link rel="stylesheet" href="https://clt-iota.vercel.app/clt.min.css">
 
-<script src="https://clt-iota.vercel.app/clt-functions.js"></script>
+<script src="https://clt-iota.vercel.app/clt.min.js"></script>
 ```
 
 This is the recommended option for quick prototypes and small projects.
@@ -379,7 +379,7 @@ A ready-to-use HTML template for starting new projects with CLT.
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CLT Project</title>
 
-    <link rel="stylesheet" href="clt-dark-minimalist.css">
+    <link rel="stylesheet" href="clt.dm.css">
     <link rel="stylesheet" href="clt.min.css">
 </head>
 
@@ -430,7 +430,7 @@ A ready-to-use HTML template for starting new projects with CLT.
         </p>
     </footer>
 
-    <script src="clt-functions.js"></script>
+    <script src="clt.min.js"></script>
 
 </body>
 </html>
@@ -451,7 +451,7 @@ https://clt-iota.vercel.app
 ## GitHub Repository
 
 ```
-https://github.com/Bugzin-xD/CLT-CSS-Library-Tools-
+https://github.com/Bugzin-xD/CLT-CSS-Library-Tools
 ```
 
 ---
