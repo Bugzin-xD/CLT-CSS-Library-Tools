@@ -26,3 +26,11 @@ All significant changes to this project will be documented in this file.
 * Documentation
 * README
 * GitHub deployment
+
+---
+
+## v2.0.0
+
+**Date:** 2026-07-06
+
+### In developing
