@@ -1,6 +1,6 @@
 /*!
  * CLT (CSS Library Tools)
- * Version: BETA
+ * Version: 2.0.0
  * Archive: clt.min.css
  * Min config archives - NECESSARY TO USE
  * Author: Loaden TI
@@ -100,7 +100,6 @@ video {
     text-decoration: none;
     outline: none;
     font-size: var(--clt-text-size);
-    cursor: pointer;
 }
 
 .clt-link:focus-visible {
@@ -135,16 +134,23 @@ video {
 .clt-main {
     flex: 1;
     width: 100%;
+    height: fit-content;
+    background: var(--clt-main-bg);
 }
 
 .clt-section {
-    width: var(--clt-container-width);
-    margin: var(--clt-margin-lg) auto;
+    width: 100%;
+    padding: var(--clt-xsm);
+    height: fit-content;
+    background: var(--clt-surface-glass);
+    color: var(--clt-text);
 }
 
 .clt-container {
     width: var(--clt-container-width);
-    margin-inline: auto;
+    padding: var(--clt-xsm);
+    background: var(--clt-bg-end);
+    color: var(--clt-text-soft);
 }
 
 .clt-center {
@@ -288,7 +294,7 @@ video {
 
 .clt-input:focus + .clt-label,
 .clt-input:not(:placeholder-shown) + .clt-label {
-    top: 0;
+    top: -10px;
     font-size: var(--clt-label-size);
     color: var(--clt-text-soft);
 }
@@ -310,7 +316,7 @@ video {
 
 .clt-input[type="date"] + .clt-label,
 .clt-input-wrapper .clt-input[type="date"] + .clt-label {
-    top: 0;
+    top: -10px;
     font-size: var(--clt-label-size);
     color: var(--clt-text-muted);
 }
@@ -443,8 +449,7 @@ video {
     border: var(--clt-border-button);
     border-radius: var(--clt-radius);
     min-width: var(--clt-button-width);
-    width: fit-content;
-    max-width: 99%;
+    max-width: 100%;
     font-size: var(--clt-button-size);
     padding: var(--clt-button-padding);
     color: var(--clt-text-soft);
@@ -455,8 +460,8 @@ video {
 
 .clt-textarea {
     overflow: hidden;
-    max-width: calc(100% - 10px);
-    background-color: var(--clt-bg-end);
+    max-width: var(--clt-textarea-width);
+    background-color: var(--clt-surface);
     color: var(--clt-text-soft);
     border: var(--clt-border);
     border-radius: var(--clt-radius);
@@ -503,7 +508,7 @@ video {
     position: relative;
     padding: var(--clt-alert-padding);
     border-radius: var(--clt-radius);
-    background: var(--clt-surface);
+    background: var(--clt-bg-start);
     color: var(--clt-text);
     border: var(--clt-border);
     box-shadow: var(--clt-shadow);
@@ -511,9 +516,6 @@ video {
     gap: var(--clt-gap);
     align-items: center;
     min-width: var(--clt-md);
-    min-width: 0;
-    overflow-wrap: anywhere;
-    word-break: break-word;
     opacity: 0;
     user-select: none;
     pointer-events: none;
@@ -537,21 +539,26 @@ video {
     background: var(--clt-danger-bg);
 }
 
+.clt-toast-success {
+    border-color: var(--clt-success);
+    background: var(--clt-success-bg);
+}
+
 .clt-progress {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: var(--clt-progress-height);
     background-color: var(--clt-progress);
+    width: var(--clt-progress-width);
+    height: var(--clt-progress-height);
+    position: fixed;
     z-index: var(--clt-progress-z);
 }
 
 .clt-progress-thumb {
-    width: 0;
-    height: 100%;
     background-color: var(--clt-progress-thumb);
-    border-radius: 0 var(--clt-radius-sm) var(--clt-radius-sm) 0;
+    width: 0;
+    height: var(--clt-progress-height);
+    position: fixed;
+    z-index: var(--clt-progress-z);
+    animation: clt-roll
 }
 
 .clt-cookies {
@@ -622,11 +629,55 @@ video {
 }
 
 .clt-return::before {
-    content: "↩ Voltar";
+    content: "↩ Return";
 }
 
 .clt-return:hover, .clt-return:focus-visible {
     color: var(--clt-text-focus);
+}
+
+.clt-hr {
+    border: none;
+    height: var(--clt-hr-height);
+    width: var(--clt-hr-width);
+    background: var(--clt-hr-bg);
+    border-radius: var(--clt-radius);
+    margin: var(--clt-margin) auto;
+}
+
+.clt-side-hr {
+    background: linear-gradient(90deg, var(--clt-side-bg) 2%, var(--clt-surface) 2%);
+}
+
+.clt-select {
+    background: transparent;
+    color: var(--clt-text-soft);
+    border-radius: var(--clt-radius-md);
+    cursor: pointer;
+    font-size: var(--clt-text-size);
+    transition: var(--clt-transition);
+}
+
+.clt-select:focus-visible {
+    border-color: var(--clt-border-focus);
+}
+
+.clt-select optgroup {
+    background: var(--clt-bg-start);
+    border: var(--clt-border-soft);
+    font-size: var(--clt-text);
+}
+
+.clt-fit {
+    max-width: fit-content;
+    max-height: fit-content;
+    padding: 0;
+}
+
+.clt-hero {
+    font-size: var(--clt-lg);
+    color: var(--clt-text-focus);
+    margin: var(--clt-margin-sm);
 }
 
 @keyframes clt-cookies-animation-in {
@@ -652,14 +703,14 @@ video {
 @keyframes clt-toast-in {
     to {
         opacity: 1;
-        transform: translateX(-10px);
+        transform: translateX(-20px);
     }
 }
 
 @keyframes clt-toast-out {
     to {
         opacity: 0;
-        transform: translateX(10px);
+        transform: translateX(20px);
     }
 }
 
