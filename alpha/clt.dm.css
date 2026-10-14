@@ -1,6 +1,6 @@
 /*!
  * CLT (CSS Library Tools)
- * Version: 2.0.0
+ * Version: ALPHA
  * Theme: Dark Minimalist
  * Author: Loaden TI
  * Copyright © Loaden TI
@@ -10,11 +10,12 @@
     --clt-bg-start: #1a1a1a;
     --clt-bg-end: #333;
 
-    --clt-surface: #3a3a3a;
-    --clt-surface-soft: #333;
-    --clt-surface-glass: #44444498;
-    --clt-header-glass: #55555598;
+    --clt-surface: transparent;
+    --clt-surface-soft: #33333348;
+    --clt-surface-glass: #44444436;
+    --clt-header-glass: #55555549;
     --clt-bg-gradient: linear-gradient(to bottom, var(--clt-bg-start), var(--clt-bg-end));
+    --clt-main-bg: #5a5a5a;
 
     --clt-text: #eee;
     --clt-text-soft: #ddd;
@@ -26,16 +27,19 @@
     --clt-border-soft: #ddd;
     --clt-border: 1px solid var(--clt-border-color);
     --clt-border-button: 1.5px solid var(--clt-border-color);
-    --clt-border-cookies: 2px solid rgb(19, 133, 24);
-    --clt-border-cookies-no: 2px solid rgb(133, 19, 24);
+    --clt-border-cookies: 2px solid #138518;
+    --clt-border-cookies-no: 2px solid #851318;
 
-    --clt-success: rgb(0, 117, 0);
-    --clt-danger: rgb(117, 0, 0);
+    --clt-success: #007500;
+    --clt-danger: #750000;
     --clt-warning: #d6a700;
+    --clt-success-bg: #004400;
     --clt-warning-bg: #4d4108;
     --clt-danger-bg: #471111;
-    --clt-cookies-bg: rgb(13, 231, 13);
-    --clt-cookies-bg-no: rgb(231, 13, 13);
+    --clt-cookies-bg: #0de80d;
+    --clt-cookies-bg-no: #e70d0d;
+    --clt-hr-bg: #777;
+    --clt-side-bg: #00e1ff;
 
     --clt-selection: #585858;
 
@@ -46,9 +50,12 @@
     --clt-scroll-border: 2px solid var(--clt-scroll-track);
 
     --clt-progress-height: 10px;
+    --clt-hr-height: 1.3px;
+    --clt-hr-width: 70%;
+    --clt-side-width: 5px;
+    --clt-textarea-width: calc(100% - 10px);
 
     --clt-progress: #292929;
-    --clt-progress-thumb: #777;
 
     --clt-radius-sm: 2px;
     --clt-radius-md: 4px;
@@ -75,7 +82,7 @@
 
     --clt-card-width: min(90%, 420px);
     --clt-input-width: min(90%, 350px);
-    --clt-container-width: min(90%, 1100px);
+    --clt-container-width: min(90%, 100%);
     --clt-progress-width: 100%;
     --clt-button-width: calc(var(--clt-button-size) + 5rem);
     --clt-xsm: clamp(5px, 10px, 20px);
@@ -102,8 +109,7 @@
     --clt-margin: 20px;
     --clt-margin-lg: 40px;
     --clt-toast-z: 9999;
-    --clt-progress-z: 9999;
-    --clt-progress-y: 9998;
+    --clt-progress-x: 9999;
 
     --clt-loader-size: 32px;
     --clt-loader-border: 3px solid var(--clt-border-color);
